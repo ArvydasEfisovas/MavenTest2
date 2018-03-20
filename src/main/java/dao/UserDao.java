@@ -1,5 +1,12 @@
 package dao;
 
-public class UserDao {
+import java.util.List;
 
+import entity.User;
+
+
+
+public interface UserDao {
+
+	List<User> getAll();
 }
