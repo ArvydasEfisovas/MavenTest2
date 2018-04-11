@@ -1,2 +1,4 @@
-/Mapper/
+/controller/
+/dao/
 /entity/
+/service/

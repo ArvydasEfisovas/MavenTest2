@@ -4,16 +4,35 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dao.UserDao;
-import entity.User;
+import dao.BookDao;
+import entity.Book;
 
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	public UserDao userDao;
+	public BookDao userDao;
 	
 	@Override
-	public List<User> getAll(){
+	public List<Book> getAll(){
 		return userDao.getAll();
+	}
+	
+	@Override
+	public void save (Book book) {
+		userDao.save(book);
+	}
+	
+	@Override
+	public Book getById(int id) {
+		return userDao.getById(id);
+	}
+	
+	@Override
+	public void update (Book book) {	
+		userDao.update(book);
+	}
+	@Override
+	public void delete(int id ) {
+		userDao.delete(id);
 	}
 }

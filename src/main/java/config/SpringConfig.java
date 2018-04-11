@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import dao.UserDao;
-import dao.UserDaoImpl;
+import dao.BookDao;
+import dao.BookDaoImpl;
 import service.UserService;
 import service.UserServiceImpl;;
 
@@ -30,11 +30,12 @@ public class SpringConfig {
 	}
 	
 	@Bean
-	public UserDao getUserDao() {
-		return new UserDaoImpl(getJdbcTemplate());
+	public BookDao getUserDao() {
+		return new BookDaoImpl(getJdbcTemplate());
 	}
 	@Bean
 	public UserService getUserService() {
 		return new UserServiceImpl();
 	}
+	
 }

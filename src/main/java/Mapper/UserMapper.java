@@ -5,19 +5,24 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import entity.User;
+import entity.Book;
 
-public class UserMapper implements RowMapper<User> {
+public class UserMapper implements RowMapper<Book> {
 
 	@Override
-	public User mapRow(ResultSet rs,int rowNum) throws SQLException{
-		User user = new User();
-		user.setUsername(rs.getString("username"));
-		user.setPassword(rs.getString("password"));
-		user.setUserlevel(rs.getInt("userlevel"));
-		user.setEmail(rs.getString("email"));
-		user.setTimestamp(rs.getString("timestamp"));
-		return user;
+	public Book mapRow(ResultSet rs,int rowNum) throws SQLException{
+		Book book = new Book();
+		book.setId(rs.getInt("id"));
+		book.setName(rs.getString("name"));
+		book.setUser("Default");
+		book.setYear(rs.getString("release_year"));
+		book.setAuthor(rs.getString("author"));
+		book.setGenre(rs.getString("genre"));
+		book.setRarity(rs.getString("rarity"));
+		book.setPages(rs.getInt("pages"));
+		book.setCover(rs.getString("cover"));
+		return book;
 	}
 	
 }
+	
